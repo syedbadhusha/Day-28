@@ -10,7 +10,7 @@
                 "stock": 94,
                 "brand": "Apple",
                 "category": "smartphones",
-                "thumbnail": "Iphone 9.jpeg",
+                "thumbnail": "./public/Iphone 9.jpeg",
                 "images": [
                 "https://i.dummyjson.com/data/products/1/1.jpg",
                 "https://i.dummyjson.com/data/products/1/2.jpg",
