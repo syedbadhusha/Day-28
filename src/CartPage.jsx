@@ -1,13 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import { ApiContext } from "./UserContext";
 
 function CartPage({product}) {
   const {dataApi,setDataApi} = useContext(ApiContext)
-  const [qty,setQty]=useState(1)
-
+  const [qty,setQty]=useState(1);
   function removeProduct(id){
     const removedList = dataApi.filter((ele)=>ele.id!==id)
     setDataApi(removedList);
+  }
+
+  function changeQty(e){
+    setQty(e.target.value)
   }
   return (
     <div className="col-md-12">
@@ -16,7 +19,7 @@ function CartPage({product}) {
           <div className="col-md-3">
             <img src={product.thumbnail} alt="..." style={{width:'200px'}}/>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-6">
             <div className="card-body">
               <h5 className="card-title">{product.title}</h5>
               <h6 className="card-title">Details & Care</h6>
@@ -27,9 +30,9 @@ function CartPage({product}) {
               </p>
             </div>
           </div>
-          <div className="col-md-1">
+          <div className="col-md-2">
                 <div>
-                    <input type="number" value={qty} style={{width:"40px"}} min='1' onChange={(e)=>setQty(e.target.value)}/>
+                    <label htmlFor="qty" >Qty : </label><input type="number" id="qty" value={qty} style={{width:"40px"}} min='1' onChange={(e)=>changeQty(e)}/>
                 </div>
                 <div style={{paddingTop:"50px"}}>
                     <button style={{color:"red"}} onClick={()=>removeProduct(product.id)}>REMOVE</button>

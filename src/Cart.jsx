@@ -7,9 +7,9 @@ function Cart() {
     const {dataApi} = useContext(ApiContext)
   return (
     <div>        {
-        dataApi.map((product,index)=>{
+        dataApi.map((product)=>{
             return (
-              <CartPage key={index} product={product}/>
+              <CartPage key={product.id} product={product}/>
             )
           }
         )

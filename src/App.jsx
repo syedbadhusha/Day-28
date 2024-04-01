@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css'
-// import ApiContextProvider from './UserContext'
 import Cart from './Cart'
 import { ApiContext } from './UserContext'
 import { useState,useEffect } from 'react'
